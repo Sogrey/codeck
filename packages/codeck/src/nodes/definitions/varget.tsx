@@ -8,7 +8,7 @@ import {
   defaultNodeWidth,
 } from '../../utils/size-helper';
 
-const width = defaultNodeWidth;
+const width = 200;
 const height = buildNodeHeight(1);
 
 export const VarGetNodeDefinition: CodeckNodeDefinition = {

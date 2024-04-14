@@ -12,7 +12,7 @@ import { LoopNodeDefinition } from './definitions/core/loop';
 import { RawJSNodeDefinition } from './definitions/core/raw-js';
 import { SleepNodeDefinition } from './definitions/core/sleep';
 import { TimerNodeDefinition } from './definitions/core/timer';
-import { LodashGetNodeDefinition } from './definitions/lodash/get';
+// import { LodashGetNodeDefinition } from './definitions/lodash/get';
 import { AddNodeDefinition } from './definitions/logic/add';
 import { AnlNodeDefinition } from './definitions/logic/anl';
 import { DividedNodeDefinition } from './definitions/logic/divided';
@@ -28,6 +28,27 @@ import { OrlNodeDefinition } from './definitions/logic/orl';
 import { SubtractNodeDefinition } from './definitions/logic/subtract';
 import { VarGetNodeDefinition } from './definitions/varget';
 import { VarSetNodeDefinition } from './definitions/varset';
+
+// Math
+import { MathMaxNodeDefinition } from './definitions/math/max';
+import { MathMinNodeDefinition } from './definitions/math/min';
+
+// String
+import { ConstantNodeDefinition } from './definitions/string/constant';
+import { TrimNodeDefinition } from './definitions/string/trim';
+import { StartsWithNodeDefinition } from './definitions/string/starts-with';
+import { SplitNodeDefinition } from './definitions/string/split';
+import { StringEqualNodeDefinition } from './definitions/string/equal';
+
+// Array
+import { IndexOfNodeDefinition } from './definitions/array/indexof';
+import { AtNodeDefinition } from './definitions/array/at';
+import { ArrayPushNodeDefinition } from './definitions/array/push';
+import { ArrayPopNodeDefinition } from './definitions/array/pop';
+
+// Conan-CodeChecker
+import { CodeCheckerInputNodeDefinition } from './definitions/conan/codeChecker/codeCheckerInput';
+import { CodeCheckerAddWarningNodeDefinition } from './definitions/conan/codeChecker/codeCheckerAddWarning';
 
 // definition
 export const builtinNodeDefinition = {
@@ -64,8 +85,29 @@ export const builtinNodeDefinition = {
   OrlNodeDefinition,
   NotNodeDefinition,
 
+  // Math
+  MathMaxNodeDefinition,
+  MathMinNodeDefinition,
+
+  // String
+  ConstantNodeDefinition,
+  TrimNodeDefinition,
+  StartsWithNodeDefinition,
+  SplitNodeDefinition,
+  StringEqualNodeDefinition,
+
+  // Array
+  ArrayPushNodeDefinition,
+  ArrayPopNodeDefinition,
+  IndexOfNodeDefinition,
+  AtNodeDefinition,
+
+  // Conan-CodeChecker
+  CodeCheckerInputNodeDefinition,
+  CodeCheckerAddWarningNodeDefinition,
+
   // Lodash
-  LodashGetNodeDefinition,
+  // LodashGetNodeDefinition,
 };
 
 // node

@@ -51,7 +51,7 @@ export const IfNodeDefinition: CodeckNodeDefinition = {
 
     return `if (${condition}) {
   ${trueBranch}
-}else {
+} else {
   ${falseBranch}
 }
 `;

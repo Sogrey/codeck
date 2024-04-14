@@ -6,7 +6,7 @@ import { buildNodeHeight, defaultNodeWidth } from '../../utils/size-helper';
 import { standard } from '../..';
 import { VariableSetNode } from '../VariableSetNode';
 
-const width = defaultNodeWidth;
+const width = 200;
 const height = buildNodeHeight(2);
 
 export const VarSetNodeDefinition: CodeckNodeDefinition = {
@@ -31,7 +31,7 @@ export const VarSetNodeDefinition: CodeckNodeDefinition = {
   outputs: [standard.execPinOutput(width)],
   code: ({ node, getConnectionInput }) => {
     return `${node.data?.name ?? ''} = ${
-      getConnectionInput('value') ?? JSON.stringify(node.data?.value ?? '')
+      getConnectionInput('value') ?? node.data?.value ?? ''
     };\n`;
   },
 };

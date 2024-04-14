@@ -178,7 +178,7 @@ export class CodeCompiler {
           if (isUndefined(item.defaultValue)) {
             return `let ${item.name};`;
           } else {
-            return `let ${item.name} = ${JSON.stringify(item.defaultValue)};`;
+            return `let ${item.name} = ${item.defaultValue};`;
           }
         })
         .join('\n') + '\n\n'

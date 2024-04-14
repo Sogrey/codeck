@@ -5,8 +5,11 @@ export const STANDARD_PIN_EXEC_OUT = '$pin_exec_out';
 export const NODE_TITLE_HEIGHT = 32;
 
 export const DEFAULT_CORE_CATEGORY = 'Core';
-
 export const DEFAULT_LOGIC_CATEGORY = 'Logic';
+export const DEFAULT_STRING_CATEGORY = 'String';
+export const DEFAULT_ARRAY_CATEGORY = 'Array';
+export const DEFAULT_MATH_CATEGORY = 'Math';
+export const CONAN_CODE_CATEGORY = 'Conan.代码检测';
 
 export const LODASH_CATEGORY = 'Lodash';
 
