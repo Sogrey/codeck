@@ -10,7 +10,7 @@ const height = buildNodeHeight(4);
 
 export const MathMinNodeDefinition: CodeckNodeDefinition =
 {
-    name: 'mathMin',
+    name: 'math_min',
     label: 'Math.min',
     type: 'call',
     component: BaseNode,

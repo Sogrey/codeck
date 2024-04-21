@@ -27,7 +27,7 @@ export const SplitNodeDefinition: CodeckNodeDefinition = {
             .port.input.text(),
         standard
             .pin({
-                name: 'seperator',
+                name: 'separator',
                 width,
                 position: 3,
             })
@@ -45,8 +45,8 @@ export const SplitNodeDefinition: CodeckNodeDefinition = {
     ],
     code: ({ node, buildPinVarName, getConnectionInput }) => {
         const string = getConnectionInput('string') ?? node.data?.string ?? '""';
-        const seperator = getConnectionInput('seperator') ?? node.data?.seperator ?? '""';
+        const separator = getConnectionInput('separator') ?? node.data?.separator ?? '""';
         const splitArray = buildPinVarName('array');
-        return `let ${splitArray} = ${string}.split(${seperator});\n`;
+        return `let ${splitArray} = ${string}.split(${separator});\n`;
     },
 };

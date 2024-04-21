@@ -10,7 +10,7 @@ const height = buildNodeHeight(4);
 
 export const MathMaxNodeDefinition: CodeckNodeDefinition =
 {
-    name: 'mathMax',
+    name: 'math_max',
     label: 'Math.max',
     type: 'call',
     component: BaseNode,

@@ -29,7 +29,8 @@ export const LengthNodeDefinition: CodeckNodeDefinition = {
     {
       ...standard
         .pin({
-          name: 'length',
+          name: 'stdLength',
+          label: 'length',
           width,
           position: 1,
         })

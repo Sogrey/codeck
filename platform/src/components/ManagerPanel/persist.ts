@@ -25,7 +25,7 @@ export function usePersist() {
         {
           description: 'Codeck',
           accept: {
-            'application/codeck': ['.codeck'],
+            'application/codeck': ['.conan'],
           },
         },
       ],
@@ -40,7 +40,7 @@ export function usePersist() {
     persist.load(JSON.parse(raw));
   });
 
-  const save = useMemoizedFn(async () => {
+  const save = useMemoizedFn(async  () => {
     if (fileHandle) {
       await writeFile(fileHandle, JSON.stringify(persist.getCurrentData()));
     }
@@ -52,7 +52,7 @@ export function usePersist() {
     // 创建文件
     const raw = JSON.stringify(persist.getCurrentData());
     const blob = new Blob([raw], { type: 'text/plain;charset=utf-8' });
-    FileSaver.saveAs(blob, `codeck-${Date.now()}.codeck`);
+    FileSaver.saveAs(blob, `conan-${Date.now()}.conan`);
   });
 
   useLayoutEffect(() => {
