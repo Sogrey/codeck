@@ -35,7 +35,7 @@ export const LengthNodeDefinition: CodeckNodeDefinition = {
           position: 1,
         })
         .port.output.base(),
-      code: ({ node, getConnectionInput }) => {
+      code: ({ getConnectionInput }) => {
         const array = getConnectionInput('array') ?? '[]';
 
         return `${array}.length`;

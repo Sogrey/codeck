@@ -31,7 +31,7 @@ export const ArrayPushNodeDefinition: CodeckNodeDefinition = {
                 width,
                 position: 2,
             })
-            .port.input.base(),
+            .port.input.text(),
     ],
     outputs: [
         standard.execPinOutput(width),

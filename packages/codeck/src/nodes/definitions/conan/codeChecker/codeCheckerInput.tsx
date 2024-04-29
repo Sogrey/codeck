@@ -25,7 +25,7 @@ export const CodeCheckerInputNodeDefinition: CodeckNodeDefinition = {
         position: 1,
       })
       .port.output.base(),
-    code: ({ node, getConnectionInput }) => {
+    code: () => {
       return "tmpPath";
     },
   },

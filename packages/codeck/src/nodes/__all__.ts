@@ -48,10 +48,26 @@ import { ArrayPopNodeDefinition } from './definitions/array/pop';
 
 // Conan-CodeChecker
 import { CodeCheckerInputNodeDefinition } from './definitions/conan/codeChecker/codeCheckerInput';
+import { CodeCheckerAddErrorNodeDefinition } from './definitions/conan/codeChecker/codeCheckerAddError';
 import { CodeCheckerAddWarningNodeDefinition } from './definitions/conan/codeChecker/codeCheckerAddWarning';
+import { CodeCheckerForLoopNestedNodeDefinition } from './definitions/conan/codeChecker/codeCheckerForLoopNestedNodeDefinition'
+import { CodeCheckerMatchInterfaceNodeDefinition } from './definitions/conan/codeChecker/CodeCheckerMatchInterface'
+
+// Misc
+import { StickyNoteNodeDefinition } from './definitions/misc/stickyNote'
 
 // definition
 export const builtinNodeDefinition = {
+  // Misc
+  StickyNoteNodeDefinition,
+
+  // Conan-CodeChecker
+  CodeCheckerInputNodeDefinition,
+  CodeCheckerAddErrorNodeDefinition,
+  CodeCheckerAddWarningNodeDefinition,
+  CodeCheckerForLoopNestedNodeDefinition,
+  CodeCheckerMatchInterfaceNodeDefinition,
+
   // Core
   BeginNodeDefinition,
   FetchNodeDefinition,
@@ -102,9 +118,6 @@ export const builtinNodeDefinition = {
   IndexOfNodeDefinition,
   AtNodeDefinition,
 
-  // Conan-CodeChecker
-  CodeCheckerInputNodeDefinition,
-  CodeCheckerAddWarningNodeDefinition,
 
   // Lodash
   // LodashGetNodeDefinition,

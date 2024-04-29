@@ -9,6 +9,7 @@ export const DEFAULT_LOGIC_CATEGORY = 'Logic';
 export const DEFAULT_STRING_CATEGORY = 'String';
 export const DEFAULT_ARRAY_CATEGORY = 'Array';
 export const DEFAULT_MATH_CATEGORY = 'Math';
+export const DEFAULT_MISC_CATEGORY = 'Misc';
 export const CONAN_CODE_CATEGORY = 'Conan.代码检测';
 
 export const LODASH_CATEGORY = 'Lodash';

@@ -6,7 +6,7 @@ import { buildNodeHeight, defaultNodeWidth } from '../../../../utils/size-helper
 import { standard } from '../../../..';
 
 const width = 300;
-const height = buildNodeHeight(16);
+const height = buildNodeHeight(18);
 
 export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
     name: 'codeCheckerAddWarning',
@@ -21,6 +21,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'row',
+                label: 'Row',
                 width,
                 position: 1,
             })
@@ -28,6 +29,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'rowEnd',
+                label: 'Row End',
                 width,
                 position: 3,
             })
@@ -35,6 +37,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'col',
+                label: 'Column',
                 width,
                 position: 5,
             })
@@ -42,6 +45,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'colEnd',
+                label: 'Column End',
                 width,
                 position: 7,
             })
@@ -49,6 +53,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'str_en',
+                label: 'tips_en',
                 width,
                 position: 9,
             })
@@ -56,6 +61,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'str_cn',
+                label: 'tips_cn',
                 width,
                 position: 11,
             })
@@ -63,6 +69,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'type',
+                label: 'Type',
                 width,
                 position: 13,
             })
@@ -70,10 +77,19 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         standard
             .pin({
                 name: 'suggest',
+                label: 'Suggest',
                 width,
                 position: 15,
             })
             .port.input.text(),
+        standard
+            .pin({
+                name: 'alarm',
+                label: 'Alarm',
+                width,
+                position: 17,
+            })
+            .port.input.boolean(),
     ],
     outputs: [
         standard.execPinOutput(width),
@@ -87,6 +103,7 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
         const str_cn = getConnectionInput('str_cn') ?? node.data?.str_cn ?? '""';
         const type = getConnectionInput('type') ?? node.data?.type ?? '""';
         const suggest = getConnectionInput('suggest') ?? node.data?.suggest ?? null;
+        const alarm = getConnectionInput('alarm') ?? node.data?.alarm ?? false;
         return `result.addWarn({
     row: ${row},
     rowEnd: ${rowEnd},
@@ -94,7 +111,8 @@ export const CodeCheckerAddWarningNodeDefinition: CodeckNodeDefinition = {
     colEnd: ${colEnd},
     str: Global.lang == 'cn' ? ${str_cn} : ${str_en},
     type: ${type},
-    suggest: ${suggest}
+    suggest: ${suggest || 'null'}
+    alarm: ${alarm || 'false'}
 });`;
     },
 };
