@@ -67,13 +67,22 @@ export const FlowEditor: React.FC = React.memo(() => {
 });
 FlowEditor.displayName = 'FlowEditor';
 
+function getStage(target: any): any {
+  if(!target) return null;
+  if (target instanceof Konva.Stage) {
+    return target;
+  } else {
+    return getStage(target.parent);
+  }
+}
+
 function useStageEventHandler() {
   const { setScale, setPosition } = useStageStore();
   const [draggable, setDraggable] = useState(false);
 
   const handleWheel = useMemoizedFn((e: Konva.KonvaEventObject<WheelEvent>) => {
     e.evt.preventDefault();
-    const stage = e.target as Konva.Stage;
+    const stage = getStage(e.target) as Konva.Stage;
     if (!stage) {
       return;
     }

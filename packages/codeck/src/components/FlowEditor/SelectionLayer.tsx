@@ -13,14 +13,30 @@ export const SelectionLayer: React.FC = React.memo(() => {
 
   useStage((stage) => {
     let isSelecting = false;
+    let isPan = false;
 
     const handleMouseDown = (
       e: Konva.KonvaEventObject<MouseEvent | TouchEvent>
     ) => {
+    // console.table({
+    //     button:e.evt.button,
+    //     buttons:e.evt.buttons,
+    // })
       // do nothing if we mousedown on any shape
       if (e.target !== stage) {
         return;
       }
+
+      if (e.evt instanceof MouseEvent && e.evt.button === 1) {
+        // 处理鼠标事件,中建平移
+        isPan = true;
+        return;
+      } else if (e.evt instanceof MouseEvent && e.evt.button != 0) {
+        // 处理鼠标事件,左键框选
+        return;
+      } else if (e.evt instanceof TouchEvent) {
+        // 处理触摸事件
+      }   
 
       if (stage.draggable() === true) {
         return;
@@ -48,6 +64,10 @@ export const SelectionLayer: React.FC = React.memo(() => {
     const handleMouseMove = (
       e: Konva.KonvaEventObject<MouseEvent | TouchEvent>
     ) => {
+    if(isPan){ // 平移逻辑
+console.log('TODO：平移')
+        return;
+    }
       // do nothing if we didn't start selection
       if (!isSelecting) {
         return;
@@ -72,6 +92,7 @@ export const SelectionLayer: React.FC = React.memo(() => {
     const handleMouseUp = (
       e: Konva.KonvaEventObject<MouseEvent | TouchEvent>
     ) => {
+        isPan = false;
       // do nothing if we didn't start selection
       if (!isSelecting) {
         return;
